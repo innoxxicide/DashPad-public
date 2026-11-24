@@ -1,0 +1,4 @@
+# Local secrets for `wrangler dev --local`; copy to .dev.vars. Keys: only A-Za-z0-9._~- (scripts/provision.ps1 rejects others).
+PROGRESS_WRITE_KEY=
+DASHPAD_READ_KEY=
+# ALERTS_IN_UA_TOKEN=
