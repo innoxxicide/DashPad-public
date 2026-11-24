@@ -1,31 +1,31 @@
 # DashPad
 
-Настенный дашборд для Android-планшета, на украинском языке.
+A wall dashboard for an Android tablet.
 
-- Левая половина: часы, дата, календарь месяца, погода на сегодня и на 7 дней, воздушная тревога в вашем районе, график отключений света (ДТЭК).
-- Правая половина: страница «Ход работ» — ваши задачи из Claude Code, которые публикует ПК.
-- Планшет работает в режиме киоска: приложение DashPad — владелец устройства (Device Owner).
+- Left half: clock, date, month calendar, weather for today and the next 7 days, the air-raid alert for your area, the power-outage schedule (DTEK).
+- Right half: the «Ход работ» (work progress) page — your Claude Code tasks, published from your PC.
+- The tablet runs in kiosk mode: the DashPad app is the Device Owner.
 
-## Из чего состоит
+## What's inside
 
-| Часть | Папка | Что делает |
+| Part | Folder | What it does |
 |---|---|---|
-| Бэкенд | `worker/` | Cloudflare Worker (TypeScript, Hono, D1): данные, настройки, копия «Хода работ» |
-| Дашборд | `dashboard/` | Vite + Preact; Worker отдаёт его как статические файлы |
-| Приложение | `android/` | Kotlin: WebView с дашбордом, панель ⚙, киоск, яркость по расписанию |
-| Публикатор | `scripts/progress-publisher.py` | отправляет «Ход работ» с ПК в Worker |
-| Настройка планшета | `scripts/provision.ps1` | ставит APK, назначает Device Owner, включает киоск |
+| Backend | `worker/` | Cloudflare Worker (TypeScript, Hono, D1): data, settings, a copy of the «Ход работ» page |
+| Dashboard | `dashboard/` | Vite + Preact; the Worker serves it as static assets |
+| App | `android/` | Kotlin: a WebView with the dashboard, the ⚙ panel, kiosk mode, scheduled brightness |
+| Publisher | `scripts/progress-publisher.py` | sends the «Ход работ» page from the PC to the Worker |
+| Tablet setup | `scripts/provision.ps1` | installs the APK, makes the app the Device Owner, turns on kiosk mode |
 
-## Как развернуть
+## How to deploy
 
-Пошаговая инструкция: [docs/setup-ru.md](docs/setup-ru.md).
+Step-by-step guide (in Russian): [docs/setup-ru.md](docs/setup-ru.md).
 
 ```
 git clone https://github.com/innoxxicide/DashPad-public.git
 ```
 
-## Лицензия
+## License
 
-MIT, см. [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
 
-Репозиторий в архиве: только для чтения, issues и pull request не принимаются.
+The repository is archived: it is read-only, and issues and pull requests are not accepted.
